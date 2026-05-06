@@ -140,11 +140,11 @@ We measure the radial velocity of \bpb{} over several epochs between October 202
 %
 The resultant set of radial velocities is analysed with a periodogram to search for candidate RV signals indicating a massive exomoon.  
 %
-Although we do not detect an exomoon signal in our data, our detection limits for a single moon are 80 Earth masses at $P=1$ day and 1 Jupiter at $P=200$ days, comparable to RV exomoon searches around other substellar companions.
+Although we do not detect an exomoon signal in our data, our detection limits for a single moon are 80 Earth masses at $P=1$~day and 1 Jupiter at $P=200$~days, comparable to RV exomoon searches around other substellar companions.
 %
-The RV limit is comparable with the astrometric exomoon limit at a period of 7 days and a mass of 150 $M_\oplus$, where for longer periods the astrometric searches have lower mass limits.
+The RV limit is comparable with the astrometric exomoon limit at a period of 7 days and a mass of 150~$M_\oplus$, where for longer periods the astrometric searches have lower mass limits.
 %
-CRIRES+ can detect a planet/moon mass ratio of $10^{-3}$ ($4M_\oplus$) with a period of up to one day, and can detect a Kepler \mbox{1708 b-i} analog or a Neptune-mass moon at hundreds of Jupiter radii.
+CRIRES+ can detect a planet/moon mass ratio of $10^{-3}$ ($4M_\oplus$) with a period of up to one day, and can detect a Neptune-mass moon at hundreds of Jupiter radii.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -179,8 +179,25 @@ While this formation pathway is highly efficient in the solar system, moons like
 % ██║╚██╔╝██║██╔══╝     ██║   ██╔══██║██║   ██║██║  ██║╚════██║
 % ██║ ╚═╝ ██║███████╗   ██║   ██║  ██║╚██████╔╝██████╔╝███████║
 % ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
+Several methods have been used to search for exomoons, with several candidates proposed; for an overview see the Review in \citet{2024arXiv240113293T}.
+%
+Gravitational microlensing by a foreground source with proper motion causes achromatic magnification in the resultant light curve of a distant background source.
+%
+This led to \citet{Bennett14} showing the microlensing event MOA-2011-BLG-262 was consistent with a free-floating planet/moon system close to the Earth, although a more distant stellar mass primary/brown dwarf system could produce the same observations.
+%
+Model degeneracies also led to \citet{Hwang18} identifying the multi-object microlensing event OGLE-2015-BLG-1459L as due to one object lensing three background sources and not a foreground star/planet/moon lensing system. 
 
-Searching for exomoons as small as Ganymede is possible through transit timing variations \citep{Teachey18} but to date no compelling candidates have been found around gas giants with orbital periods less than 50 days \citep{Kipping12,Kipping15}.
+Directly imaging the thermal emission from tidally heated exomoons (THEMs) is a possibility for very close exoplanet systems \citet{Peters13} such as the exoplanet Epsilon~Eridani~b \citep{Kleisioti23}.
+%
+Tidally locked THEMs can also be detected on high inclination orbits around their parent planet; any bright spot of thermal emission caused by volcanic activity will result in photometric modulation of the light curve \citep{Kleisioti24}.
+%
+Volcanic exomoons can also produce an exosphere that is detected as spectral absorption lines of neutral Sodium and Potassium seen before, during and after the transits of hot Jupiters, as seen for WASP-49 b \citep{Oza19}.
+
+Exomoons may transit their parent exoplanet, and searches around free floating \citep{Limbach21} and bound \citep{2025arXiv251115317K,2026arXiv260405235P} self-luminous exoplanets showing plausible eclipses, although the variability of the planets themselves can confound this signal.
+
+Searching for exomoons as small as Ganymede is possible through the impact an exomoon has on the transit of its parent planet across the stellar disk.
+%
+This can be seen in both transit timing variations and transit duration variations \citep{Kipping09,Kipping09a}, and were the main methods behind the Hunt for Exomoons with Kepler \citep[HEK; ][]{Kipping12,Kipping13,Kipping22}, but to date no compelling candidates have been found around gas giants with orbital periods less than 50 days \citep{Kipping15}.
 %
 Since it is expected that the planets forming in the 5-20 au regime have attendant moons, it is suspected that the process of their migration caused the moons to be scattered away from the system \citep{Dobos21}.
 %
@@ -220,28 +237,8 @@ In Sect.~\ref{sect:obs} we detail the observations with the VLT, followed by a p
 %
 We discuss these results in Sect.~\ref{sect:discuss} along with our conclusions in Sect.~\ref{sect:conclusions}.
 
+
 \section{Observations and analysis}\label{sect:obs}
-
-
-   \begin{figure}
-        \centering
-        \includegraphics[width=1.0\columnwidth]{figures/fig_cross_correlation_betapicb_dario.pdf}
-        {\caption{Cross correlation of the CRIRES+ spectrum of the planet, (a) indicating the rotational broadening of the planet and (b) the relative detection strengths of the planet in water and carbon monoxide.
-        }
-        \label{fig:xcor}}%
-    \end{figure}
-
-
-   \begin{figure*}[t]
-        \centering
-        \includegraphics[width=1.0\textwidth]{figures/fig_spec_betapicb_dario.pdf}
-        {\caption{A section of the spectrum of Beta Pictoris b from CRIRES+, showing one night of data and the fitted model.
-        %
-        The template spectra of water and carbon monoxide are shown above, indicating their relative contributions.
-        }
-        \label{fig:criresspec}}%
-    \end{figure*}
-
 
 
 \bpb{} was observed as a service mode program with various epochs between UT 17 Oct 2024 and UT 09 Mar 2025 using VLT/CRIRES+.
@@ -294,12 +291,26 @@ The mean precision was 320~m~s$^{-1}$.
 %An overview of the measured radial velocities for \bpb{} are listed in Table~\ref{tab:rv}, along with the final heliocentric corrected radial velocities.
 
 
+
+   \begin{figure*}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/fig_spec_betapicb_dario.pdf}
+        {\caption{A section of the spectrum of Beta Pictoris b from CRIRES+, showing one night of data and the fitted model.
+        %
+        The template spectra of water and carbon monoxide are shown above, indicating their relative contributions.
+        }
+        \label{fig:criresspec}}%
+    \end{figure*}
+
+
 % Dario: below is my routine to extract radial velocities
 A second, separate and fully independent reduction and analysis were carried out to validate the RV measurements.
 %
 In this workflow, the data were processed using the Python package \texttt{excalibuhr} \citep{Zhang24}.
 %
-The reduction steps closely follow those of \textit{pycrires}; however, we implemented a revised extraction scheme that combines all spatial pixels containing a significant planetary signal.
+The reduction steps closely follow those of \texttt{pycrires}; however, we implemented a revised extraction scheme that combines all spatial pixels containing a significant planetary signal.
+%
+A section of one of the reduced spectra is shown in Fig.~\ref{fig:criresspec}.
 %
 Atmospheric retrievals were then performed using forward models generated with \texttt{petitRADTRANS} \citep{Molliere19} and explored via nested sampling with \texttt{ultranest} \citep{Buchner21}.
 %
@@ -318,6 +329,14 @@ The contribution of starlight at the planet's location is incorporated directly 
 We adopt these radial velocities for subsequent analysis due to their greater precision.
 
 
+   \begin{figure}
+        \centering
+        \includegraphics[width=1.0\columnwidth]{figures/fig_cross_correlation_betapicb_dario.pdf}
+        {\caption{Cross correlation of the CRIRES+ spectrum of the planet, (a) indicating the rotational broadening of the planet and (b) the relative detection strengths of the planet in water and carbon monoxide.
+        }
+        \label{fig:xcor}}%
+    \end{figure}
+
 
 
    \begin{figure}
@@ -326,6 +345,7 @@ We adopt these radial velocities for subsequent analysis due to their greater pr
         {\caption{Radial velocity measurements of \bpb{} from CRIRES+ with the \citet{gonzalezpicosESOSupJupSurvey2024} formulation.}}
         \label{fig:radvel}%
     \end{figure}
+
 
 In Fig.~\ref{fig:xcor}, we show the detection of the planet's rotation and the identification of water (H$_2$O) and carbon monoxide (CO), which are the dominant opacity sources over the wavelength range of the observations ($\lambda = 2060$--2472 nm).
 %
@@ -429,6 +449,7 @@ MJD & RV$_{\textrm{instrument}}$ & RV$_{\textrm{corr}}$ & RV$_{\textrm{helio}}$ 
 
    \begin{figure*}
         \centering
+        \script{plot_rbpic_exomoon_limits.py}
         \includegraphics[width=1.0\textwidth]{figures/rbpic_exomoon_limits.pdf}
         {\caption{The upper limits on exosatellites around \bpb{}.
         %
@@ -520,7 +541,7 @@ A study on the HR 8799 b,c,d exoplanets with Keck OSIRIS radial velocities ruled
 %  ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝╚══════╝
 %                                            
 
-An additional observing campaign, consisting of 25 CRIRES+ observations sampled randomly over a 50 day period, was simulated and added to the current RV dataset, and the resultant sensitivity curve is shown in Fig.~\ref{fig:exolimits} with the injection recovery limits shown in \ref{fig:future}.
+An additional observing campaign, consisting of 25 CRIRES+ observations sampled randomly over a 50 day period, was simulated and added to the current RV dataset, and the resultant sensitivity curve is shown in Fig.~\ref{fig:exolimits} with the injection recovery limits shown in Fig.~\ref{fig:future}.
 %
 Given the previous performance of CRIRES, we can reach a mass ratio of $10^{-3}$ for an orbital period of 1 day, and we can potentially detect Neptune mass exomoons out to periods of 200 days.
 
@@ -539,13 +560,13 @@ Given the previous performance of CRIRES, we can reach a mass ratio of $10^{-3}$
  
     % \item there is room for improvement even with crires. The photon-limited uncertainties on the rv measurements are considerably smaller than the observed scatter. is this due to the instrument/scattered light? or is it due to planetary variability? Yifan Zhou has an approved and executed JWST program to measure the light curve of beta pic b, so we can use that to estimate how large the variability should be. (from a conference presentation, it looks like it's 4\% peak to peak, so that times 20 km/s is about 800 m/s peak to peak. We actually see 4 km/s peak to peak, so that implies something else is causing variability (or the JWST 4.1 micron band variability is smaller than the crires band variability). 
 
-Recently, \citet{Macias26} analyzed archival astrometric data on \bpb{} and determined upper limits on exomoons. 
+\citet{Macias26} analyzed archival astrometric data on \bpb{} and determined upper limits on exomoons. 
 %
 These limits are shown as the pale green line in Fig.~\ref{fig:exolimits}.
 %
 % aE ≈ 0.4895 (1.0000− 1.0305eP− 0.2738esat) Domingos 2006 Eq. 5 
 % take e=0.10 gives 0.44 Rhill
-Astrometric detection limits complement the radial velocity methods, and we can now rule out $150 M_\oplus$ exomoons on circular orbits around \bpb{} for all prograde stable orbits \citep[estimated as 0.44 of the Hill sphere radius using Eq. 5 from ][]{Domingos06}.
+Astrometric detection limits complement the radial velocity methods, and we can now rule out $150 M_\oplus$ exomoons for edge-on circular orbits around \bpb{} for all prograde stable orbits \citep[estimated as 0.44 of the Hill sphere radius using Eq. 5 from ][]{Domingos06}.
 %
 Indeed, even though there is a peak in the periodogram at around 52 days (but still below the FAP limit), the astrometric limits are far more constraining at this period and show no signal.  
 
