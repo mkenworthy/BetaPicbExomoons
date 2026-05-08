@@ -1,4 +1,4 @@
-debug=1
+debug=0
 import numpy as np
 from astropy import constants as c
 from astropy import units as u
