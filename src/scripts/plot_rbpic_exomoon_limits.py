@@ -1,4 +1,4 @@
-debug=0
+debug=1
 import numpy as np
 from astropy import constants as c
 from astropy import units as u
@@ -219,7 +219,7 @@ bboxdict = dict(facecolor='white',
 
 (low, upp) = ax.get_xlim()
 
-toff = 300
+toff = 200
 
 ax.hlines((mear / Mbpb).decompose(), low, upp, **planetlines)
 ax.text(upp-toff, (mear / Mbpb).decompose(), "Earth", bbox=bboxdict, **planetlab)
@@ -235,16 +235,20 @@ ax.text(upp-toff, (1 * u.Mjup / Mbpb).decompose(), "Jupiter", bbox=bboxdict, **p
 
 # Hill sphere stability limits
 
-ax.vlines((rh * 0.33).to(u.Rjup).value, -5, 2, color="darkred",linewidth=3)
+
+# % aE ≈ 0.4895 (1.0000− 1.0305eP− 0.2738esat) Domingos 2006 Eq. 5 
+# % take e=0.10 gives 0.44 Rhill
+stable = 0.44
+ax.vlines((rh * stable).to(u.Rjup).value, -5, 2, color="darkred",linewidth=3)
 
 ax.add_artist(
-    Rectangle(((rh * 0.33).to(u.Rjup).value,-5), 400, 7,
+    Rectangle(((rh * stable).to(u.Rjup).value,-5), 400, 7,
     alpha=0.5, facecolor='darkred', edgecolor=None, zorder=40 ))
 
 # retrograde stable orbits in Hill sphere
 #ax.vlines((rh * 0.6).to(u.Rjup).value, -5, 2, color="black")
 
-ax.text((rh * 0.33).to(u.Rjup).value+80, 3.5e-3, 
+ax.text((rh * stable).to(u.Rjup).value+80, 6.5e-3, 
     "Stable prograde orbits in Hill sphere", rotation = 90,
     zorder=50, color='white',
     horizontalalignment='left', verticalalignment='center',
@@ -302,22 +306,22 @@ axp.set_xlim(period_lower.value, period_upper.value)
 k1708_P = 4.6 * u.d
 k1708_massratio = 0.11
 
-axp.scatter(k1708_P, k1708_massratio, color='black', marker="s")
+# axp.scatter(k1708_P, k1708_massratio, color='black', marker="s")
 
 
-axp.text(k1708_P.value-0.5, k1708_massratio, "1708 b-i",
-    horizontalalignment='right', verticalalignment='center' )
+# axp.text(k1708_P.value-0.5, k1708_massratio, "1708 b-i",
+#     horizontalalignment='right', verticalalignment='center' )
 
 
 # Teachey 2018 SciAdv - Kepler 1625 b-i
 
-k1625_P = 22 * u.d # +17 -9
-k1625_massratio = 0.0141 # +0.0048 -0.0039
+# k1625_P = 22 * u.d # +17 -9
+# k1625_massratio = 0.0141 # +0.0048 -0.0039
 
-axp.scatter(k1625_P, k1625_massratio, color='black', marker="o")
+# axp.scatter(k1625_P, k1625_massratio, color='black', marker="o")
 
-axp.text(k1625_P.value-2.5, k1625_massratio, "1625 b-i",
-    horizontalalignment='right', verticalalignment='center' )
+# axp.text(k1625_P.value-2.5, k1625_massratio, "1625 b-i",
+#     horizontalalignment='right', verticalalignment='center' )
 
 
 # put Earth masses on right hand axis
