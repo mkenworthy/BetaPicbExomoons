@@ -95,18 +95,17 @@
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
-\author[M. A. Kenworthy et al.]{
-Matthew A. Kenworthy,$^{1}$\thanks{E-mail: kenworthy@strw.leidenuniv.nl}
-R. Landman,$^{1}$
-A. Vanderburg,$^{2,3}$
-J. E. Rodriguez,$^{4}$
-J. L. Birkby,$^{5}$
-I. Macias,$^{6,7}$\newauthor
-D. Gonz{\'a}lez Picos,$^{1}$
-S. A. Jenkins,$^{4}$
-E. Kleisioti,$^{1}$
-T. Stolker,$^{1}$
-I. Koutalios$^{1}$
+\author[M. A. Kenworthy et al.]{Matthew A. Kenworthy,$^{1}$\thanks{E-mail: kenworthy@strw.leidenuniv.nl}
+Rico Landman,$^{1}$
+Andrew Vanderburg,$^{2,3}$
+Joseph E. Rodriguez,$^{4}$\newauthor
+Jayne L. Birkby,$^{5}$
+Isabella Macias,$^{6,7}$
+Dar{\'i}o Gonz{\'a}lez Picos,$^{1}$
+Sydney A. Jenkins,$^{4}$
+Elina Kleisioti,$^{1,8}$\newauthor
+Tomas Stolker,$^{1}$
+Ioannis Koutalios$^{1}$
 \\
 % List of institutions
 $^{1}$Leiden Observatory, Leiden University, Postbus 9513, 2300 RA Leiden, The Netherlands\\
@@ -115,7 +114,8 @@ $^{3}$Department of Physics and Kavli Institute for Astrophysics and Space Resea
 $^{4}$Center for Data Intensive and Time Domain Astronomy, Department of Physics and Astronomy, Michigan State University, East Lansing, MI 48824, USA\\
 $^{5}$Astrophysics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK\\
 $^{6}$Department of Earth, Atmospheric, and Planetary Sciences, Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA 02139, USA\\
-$^{7}$Department of Astronomy, University of Florida, Bryant Space Science Center, Stadium Road, Gainesville, FL 32611, USA
+$^{7}$Department of Astronomy, University of Florida, Bryant Space Science Center, Stadium Road, Gainesville, FL 32611, USA\\
+$^{8}$Faculty of Aerospace Engineering, Delft University of Technology, 2629 HS, Delft, The Netherlands
 }
 
 % These dates will be filled out by the publisher
@@ -234,7 +234,7 @@ In 2016, the planet's Hill sphere transited the star to within 20\% of the Hill 
 %
 This suggests that satellites are already formed, and they may well have high inclinations amenable for detection with RV methods.
 
-In this Letter, we present upper limits on our search for exomoons around Beta Pictoris b using CRIRES+ combined with astrometric limits derived from archival astrometric data \citep{2025arXiv251200160M}.
+In this Letter, we present upper limits on our search for exomoons around Beta Pictoris b using CRIRES+ combined with astrometric limits derived from archival astrometric data \citep{Macias26}.
 %
 In Sect.~\ref{sect:obs} we detail the observations with the VLT, followed by a periodogram analysis with injection and recovery.
 %
@@ -296,8 +296,9 @@ The mean precision was 320~m~s$^{-1}$.
 
 
    \begin{figure*}
+    \script{plot_spec_betapicb.py}
         \centering
-        \includegraphics[width=1.0\textwidth]{figures/fig_spec_betapicb_dario.pdf}
+        \includegraphics[width=1.0\textwidth]{figures/spec_betapicb.pdf}
         {\caption{A section of the spectrum of Beta Pictoris b from CRIRES+, showing one night of data and the fitted model.
         %
         The template spectra of water and carbon monoxide are shown above, indicating their relative contributions.
@@ -334,9 +335,9 @@ We adopt these radial velocities for subsequent analysis due to their greater pr
 
    \begin{figure}
         \centering
-        \includegraphics[width=1.0\columnwidth]{figures/fig_cross_correlation_betapicb_dario.pdf}
-        {\caption{Cross correlation of the CRIRES+ spectrum of the planet, (a) indicating the rotational broadening of the planet and (b) the relative detection strengths of the planet in water and carbon monoxide.
-        }
+        \script{plot_cc_betapicb.py}
+        \includegraphics[width=1.0\columnwidth]{figures/cc_betapicb.pdf}
+        {\caption{Cross correlation of the CRIRES+ spectrum of the planet, (a) indicating the rotational broadening of the planet and at the retrieved $v \sin{i} \approx$19 \kms{} and the auto-correlation function (ACF) of the unbroadened model spectrum. (b) the relative detection strengths of the planet in water and carbon monoxide.}
         \label{fig:xcor}}%
     \end{figure}
 
@@ -356,7 +357,7 @@ The planetary spectrum and the best-fit model are shown in Fig.~\ref{fig:criress
 %
 For subsequent analysis we adopt these physical parameters of \bpb{}: from \citet{Lacour21} we take the mass of \bpb{} to be $11.9\pm3.0$\,\mj{}, with orbital parameters $a=9.93\pm0.03$\,au, $e=0.103\pm0.003$ and $i=89.00\pm0.01$ deg.
 %
-For the radius we adopt the Exo-REM posterior from \citet{2025arXiv250925338R} of $1.73\pm0.01$\,\rj{}.
+For the radius we adopt the Exo-REM posterior from \citet{Ravet25} of $1.73\pm0.01$\,\rj{}.
 %
 We calculate the Roche limit both for solid and fluid bodies using the mass/radius relationship from \citet{Chen17}, although we note that young objects may have a larger radius and therefore lower density.
 
@@ -460,9 +461,11 @@ MJD & RV$_{\textrm{instrument}}$ & RV$_{\textrm{corr}}$ & RV$_{\textrm{helio}}$ 
         %
         The red line is the outermost stable prograde orbit for an exosatellite around \bpb{}.
         %
-        The pale green line corresponds to astrometric limits from \citet{2025arXiv251200160M}.
+        The pale green line corresponds to astrometric limits from \citet{Macias26}.
         %
         The Roche limits for rigid and fluid exosatellite bodies are shown in gray on the left.
+        %
+        The predicted mass and location for an exomoon which could give Beta Pic b a high obliquity is indicated in purple \citep{Poon24}.
         %
         The predicted sensitivity for an additional 25 observations with CRIRES+ is shown in purple.
         %
@@ -499,7 +502,7 @@ The results are shown in Fig.~\ref{fig:blindsearch}.
 %
 Even though the shortest time between two observations is around two days, we are sensitive to shorter orbital periods due to the irregularly spaced sampling of our measurements.
 %
-The injection and recovery tests demonstrate our sensitivities at these short orbital periods.
+%The injection and recovery tests demonstrate our sensitivities at these short orbital periods.
 %
 The largest $\Delta$BIC has a value of 12 for an orbital period of 2.3 days, below the false alarm probability threshold of 46.
 %
@@ -579,7 +582,7 @@ These reported measurements represent the most sensitive limits to exomoons at s
 
 Extending the monitoring of \bpb{} with CRIRES+ will increase the sensitivity to moons with mass ratios greater than about $5\times10^{-3}$ i.e. moons that formed/arrived via gravitational capture pathways or ones which induce the obliquity in Beta Pictoris b \citep{Poon24} - see Fig.~\ref{fig:exolimits}.
 %
-Together with the first astrometric limits of \bpb{} from \citet{2025arXiv251200160M} we can rule out any exomoons three times more massive than Saturn in the Hill sphere.
+Together with the first astrometric limits of \bpb{} from \citet{Macias26} we can rule out any exomoons three times more massive than Saturn in the Hill sphere.
 
 % ███████╗██╗   ██╗████████╗██╗   ██╗██████╗ ███████╗
 % ██╔════╝██║   ██║╚══██╔══╝██║   ██║██╔══██╗██╔════╝
@@ -636,13 +639,9 @@ To achieve the scientific results presented in this article, we made use of the 
 
 \bibliographystyle{mnras}
 \bibliography{bib} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
-\clearpage
 \appendix
-%\section{Periodogram of the RV time series}
-
 
 \section{Injection recovery tests}
 \label{app:injrecover}
