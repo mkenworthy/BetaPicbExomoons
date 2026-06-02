@@ -75,8 +75,6 @@
         bookmarksdepth=5%
 }
 
-
-
 \newcommand{\angstrom}{\textup{\AA}}
 \newcommand{\kms}{km s$^{-1}$}
 \newcommand{\ms}{m s$^{-1}$}
@@ -84,10 +82,6 @@
 \newcommand{\mj}{$\mathrm{M_{Jup}}$}
 \newcommand{\rj}{$\mathrm{R_{Jup}}$}
 \newcommand{\msol}{$\mathrm{M_\odot}$}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
@@ -119,7 +113,7 @@ $^{8}$Faculty of Aerospace Engineering, Delft University of Technology, 2629 HS,
 }
 
 % These dates will be filled out by the publisher
-\date{Accepted XXX. Received YYY; in original form ZZZ}
+\date{Accepted 2026 May 29. Received 2026 May 16; in original form 2026 February 13}
 
 % Enter the current year, for the copyright statements etc.
 \pubyear{2026}
@@ -147,11 +141,7 @@ The RV limit is comparable with the astrometric exomoon limit at a period of 7 d
 With an additional observing season, CRIRES+ can detect a planet/moon mass ratio of $10^{-3}$ ($4M_\oplus$) with a period of up to one day, and can detect a Neptune-mass moon at hundreds of Jupiter radii.
 \end{abstract}
 
-% Select between one and six entries from the list of approved keywords.
-% Don't make up new ones.
 \begin{keywords}techniques: radial velocities --- stars: planetary systems --- stars: individual: Beta Pictoris\end{keywords}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 
@@ -206,8 +196,6 @@ These detections are contested: other teams have carried out an analysis on the 
 
 Directly imaged exoplanets offer a greater potential for satellite detection due to their typically much larger separations from the host star, which increases the planet's Hill sphere radius \citep{Dobos21}, and the absence of significant inward planet migration keeps any attendant moons after their formation.
 %
-%The additional possibility of exomoon transits around free-floating planets enables moon detection and potential characterisation \citep{Limbach21,Limbach24b,Wilson25}.
-%
 Astrometric searches can detect exomoons at larger semimajor distances, and an initial search around the substellar companion HD 206893 B with VLTI/GRAVITY+ has resulted in a tantalising signal \citep{2025arXiv251120091K}.
 
 % ██████╗ ███████╗████████╗ █████╗     ██████╗ ██╗ ██████╗
@@ -239,7 +227,6 @@ We discuss these results in Sect.~\ref{sect:discuss} along with our conclusions 
 
 
 \section{Observations and analysis}\label{sect:obs}
-
 
 \bpb{} was observed as a service mode program with various epochs between UT 17 Oct 2024 and UT 09 Mar 2025 using VLT/CRIRES+.
 %
@@ -287,10 +274,6 @@ In this case, we fix all the parameters of the planet, e.g. the atmospheric para
 This likelihood was calculated for a grid of radial velocity values, which was finally converted to a maximum likelihood estimate and an associated uncertainty.
 %
 The mean precision was 320~m~s$^{-1}$.
-%
-%An overview of the measured radial velocities for \bpb{} are listed in Table~\ref{tab:rv}, along with the final heliocentric corrected radial velocities.
-
-
 
    \begin{figure*}
     \script{plot_spec_betapicb.py}
@@ -303,8 +286,6 @@ The mean precision was 320~m~s$^{-1}$.
         \label{fig:criresspec}}%
     \end{figure*}
 
-
-% Dario: below is my routine to extract radial velocities
 A second, separate and fully independent reduction and analysis were carried out to validate the RV measurements.
 %
 In this workflow, the data were processed using the Python package \texttt{excalibuhr} \citep{Zhang24}.
@@ -365,8 +346,6 @@ We calculate the Roche limit both for solid and fluid bodies using the mass/radi
     \caption{Results of the blind search for exosatellites in the RV time series listed in Table~\ref{tab:rv} using \texttt{RVsearch}. It shows the difference in the Bayesian information criterion ($\Delta$BIC) between a model including a satellite and a model without a satellite. We also show the threshold for the 0.001 false alarm probability (FAP).}
         \label{fig:blindsearch}
 \end{figure}
-
-
 
 % RICO LANDMAN REDUCTION NUMBERS
 % \begin{table}
@@ -465,10 +444,6 @@ MJD & RV$_{\textrm{instrument}}$ & RV$_{\textrm{corr}}$ & RV$_{\textrm{helio}}$ 
         The predicted mass and location for an exomoon which could give Beta Pic b a high obliquity is indicated in purple \citep{Poon24}.
         %
         The predicted sensitivity for an additional 25 observations with CRIRES+ is shown in purple.
-        %
-    %    Analogues for the exomoon candidates \mbox{Kepler 1708 b-i} and \mbox{Kepler~1625~b-i} are a black square and black circle, respectively.
-        %
-        %\textbf{}The light orange rectangle represents the predicted location of an exomoon from \citet{Poon24}.
         }
         \label{fig:exolimits}}%
     \end{figure*}
@@ -499,22 +474,11 @@ The results are shown in Fig.~\ref{fig:blindsearch}.
 %
 Even though the shortest time between two observations is around two days, we are sensitive to shorter orbital periods due to the irregularly spaced sampling of our measurements.
 %
-%The injection and recovery tests demonstrate our sensitivities at these short orbital periods.
-%
 The largest $\Delta$BIC has a value of 12 for an orbital period of 2.3 days, below the false alarm probability threshold of 46.
 %
 A set of injection and recovery tests for various trial periods and masses for a single exomoon on a circular orbit was performed, with the resultant recovery limits shown in Fig.~\ref{fig:sensitivity}.
 %
 Fig.~\ref{fig:exolimits} shows the upper limits for a single exomoon orbiting \bpb{} in a circular orbit, as a function of semi-major axis and moon to planet mass function ratio.
-
-% We also search for short period ($<$15 day) RV signals in the CRIRES+ observations using {\tt EXOFASTv2} \citep{Eastman19}.
-% %
-% We perform an RV only, mcmc fit starting the orbital period at the top peaks shown in Figure 2, and specifically at the 1.6 day period identified.
-% %
-% We adopt the same priors for Beta Pic b, constraining exosatellite's orbit to be circular. We ran fits to determine the significance of this 1.6 day signal  by constraining the companion's period within the fit from 0.6 to 15 days and 0.6 to 5 days.
-% %
-% The results from {\tt EXOFASTv2} confirm those from the {\tt RVsearch} methodology and provide an upper limit ($3\sigma$) on $M_p \sin i$ of 0.592 \mj{} at a fitted period of 1.591 days.
-
 
 \section{Discussion}\label{sect:discuss}
 
@@ -553,15 +517,7 @@ Given the previous performance of CRIRES, we can reach a mass ratio of $10^{-3}$
 % ██╔████╔██║███████║██║     ██║███████║███████╗     █████╔╝███████╗
 % ██║╚██╔╝██║██╔══██║██║     ██║██╔══██║╚════██║    ██╔═══╝ ╚════██║
 % ██║ ╚═╝ ██║██║  ██║╚██████╗██║██║  ██║███████║    ███████╗███████║
-% ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═╝╚══════╝    ╚══════╝╚══════╝
-%                                                                   
-
-
-% From \citet{2024AAS...24311202M} we have: ``A lunar companion is only allowed if its mass remains below 0.25 Jupiter masses at orbital periods near 750 days (with 99.7\% confidence). Our constraints also rule out any potential exomoons above 2 Jupiter masses with periods ranging from 250 to 2000 days (with 99.7\% confidence).''
-
-%    \item I think these are the best sensitivity to exomoons with rv measurements to date. Compare to V\&R, which is in the same order of magnitude (check these numbers). Hostman got 60 $M_\oplus$ at the roche limit. Ruffio got 120 $M_\oplus$ at the Roche limit. 
- 
-    % \item there is room for improvement even with crires. The photon-limited uncertainties on the rv measurements are considerably smaller than the observed scatter. is this due to the instrument/scattered light? or is it due to planetary variability? Yifan Zhou has an approved and executed JWST program to measure the light curve of beta pic b, so we can use that to estimate how large the variability should be. (from a conference presentation, it looks like it's 4\% peak to peak, so that times 20 km/s is about 800 m/s peak to peak. We actually see 4 km/s peak to peak, so that implies something else is causing variability (or the JWST 4.1 micron band variability is smaller than the crires band variability). 
+% ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═╝╚══════╝    ╚══════╝╚══════╝                                                                   
 
 \citet{Macias26} analyzed archival astrometric data on \bpb{} and determined upper limits on exomoons. 
 %
@@ -602,8 +558,6 @@ One highly promising candidate is YSES~1b which hosts both a circumplanetary dis
 
 If the geometry is particularly favourable and the moon transits the disk of the exoplanet, the Rossiter-McLaughlin effect can produce a very pronounced RV signal due to the rapid rotation of these young exoplanets \citep{Ruffio23}.
 %
-%The short duration of these transits (typically less than 2 hours) requires integrations that last only a few minutes, requiring  ELT class telescopes with high spectral resolution instruments such as METIS and ANDES, for all but the brightest exoplanets. 
-%
 If exomoons do transit \bpb{} and other wide projected separation planets such as YSES~1~b, then we may be highly fortunate and have our first RV-detected exomoons within the next few years.
 
 \section*{Acknowledgements}
@@ -630,14 +584,11 @@ To achieve the scientific results presented in this article, we made use of the 
  %
  This is available at \url{https://github.com/mkenworthy/BetaPicbExomoons}
 
-%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
-
-% The best way to enter references is to use BibTeX:
-
 \bibliographystyle{mnras}
 \bibliography{bib} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
+
 \appendix
 
 \section{Injection recovery tests}
