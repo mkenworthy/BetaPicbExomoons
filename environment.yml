@@ -1,10 +1,8 @@
 dependencies:
-  - conda-forge::numpy
-  - conda-forge::pip
+  - conda-forge::numpy=2.4.6
+  - conda-forge::pip=26.1.2
   - conda-forge::python=3.11
-  - conda-forge::astropy
+  - conda-forge::astropy=8.0.1
   - pip:
-      - matplotlib
-      - graphviz
-      - emcee
-      - corner
+      - matplotlib==3.11.1
+      - graphviz==0.21
